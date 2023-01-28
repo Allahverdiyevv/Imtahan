@@ -7,8 +7,10 @@ namespace WebApplication1.Areas.Manage.Controllers
 	[Authorize]
 	public class AccountController : Controller
 	{
+		
 		public IActionResult Index()
 		{
+
 			return View();
 		}
 	}
