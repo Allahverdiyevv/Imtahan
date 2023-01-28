@@ -1,0 +1,43 @@
+﻿@model List<AppBay>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<h1>Index</h1>
+<a asp-action="Create" asp-controller="AppBay" class="btn btn-success">Create</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title1</th>
+            <th scope="col">Desc</th>
+            <th scope="col">Icon</th>
+        
+            <th scope="col">Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+
+                <th scope="row">@count</th>
+                <td>@item.Title1</td>
+                <td>@item.Desc</td>
+                <td>@item.Icon</td>
+            
+
+                <td>
+                    <a asp-action="Update" asp-controller="AppBay" asp-route-id="@item.Id" class="btn btn-info">Update</a>
+                    <a asp-action="Delete" asp-controller="AppBay" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+
